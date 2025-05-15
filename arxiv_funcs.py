@@ -7,15 +7,8 @@ import arxiv
 
 PAPER_DIR = "papers"
 
-def search_papers(topic: str, max_results: int = 5) -> List[str]:
-    """
-    Search for papers on arXiv based on a topic and store their information.
-    Args:
-        topic: The topic to search for
-        max_results: Maximum number of results to retrieve (default: 5)
-    Returns:
-        List of paper IDs found in the search
-    """
+
+def search_paper(topic: str, max_results: int = 5) -> List[str]:
     client = arxiv.Client()
     search = arxiv.Search(
         query=topic,
@@ -55,15 +48,7 @@ def search_papers(topic: str, max_results: int = 5) -> List[str]:
     return paper_ids
 
 
-def extract_info(paper_id: str) -> str:
-    """
-    Search for a information about a specific paper across all topic directories.
-    Args:
-        paper_id: The ID of the paper to look for
-    
-    Returns:
-        JSON string with paper information if found, error message if not found.
-    """
+def extract(paper_id: str) -> str:
     for item in os.listdir(PAPER_DIR):
         item_path = os.path.join(PAPER_DIR, item)
         if os.path.isdir(item_path):

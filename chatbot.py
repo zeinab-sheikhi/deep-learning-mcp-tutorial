@@ -4,7 +4,7 @@ import os
 import anthropic
 from dotenv import load_dotenv
 
-from research_server import search_papers, extract_info
+from arxiv_funcs import search_papers, extract_info
 
 
 PAPER_DIR = "papers"
