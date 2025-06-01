@@ -1,0 +1,44 @@
+```
+                        MODEL CONTEXT PROTOCOL (MCP)
+                        "USB-C for AI Applications"
+                               |
+        +---------------------+----------------------+
+        |                     |                      |
++-------v-------+    +--------v--------+    +-------v-------+
+|    PURPOSE    |    |  ARCHITECTURE   |    |   BENEFITS    |
++---------------+    +-----------------+    +---------------+
+| Standardizes  |    |                 |    | - Pre-built   |
+| how apps      |    |    +-------+    |    |   integrations|
+| provide       |    |    |  MCP  |    |    | - Vendor      |
+| context to    |    |    | Hosts |    |    |   flexibility |
+| LLMs          |    |    +---+---+    |    | - Security    |
+|               |    |        |        |    |   best        |
+|               |    |    +---v---+    |    |   practices   |
+|               |    |    |  MCP  |    |    |               |
+|               |    |    |Clients|    |    |               |
+|               |    |    +---+---+    |    |               |
+|               |    |        |        |    |               |
+|               |    |    +---v---+    |    |               |
+|               |    |    |  MCP  |    |    |               |
+|               |    |    |Servers|    |    |               |
+|               |    |    +---+---+    |    |               |
+|               |    |        |        |    |               |
+|               |    |   +----+----+   |    |               |
+|               |    |   |         |   |    |               |
+|               |    |+--v--+  +---v-+ |    |               |
+|               |    ||Local|  |Remote||    |               |
+|               |    ||Data |  |Servic||    |               |
+|               |    ||Sourc|  |es    ||    |               |
+|               |    |+-----+  +------+|    |               |
++---------------+    +-----------------+    +---------------+
+                               |
+                     +---------v---------+
+                     |     RESOURCES     |
+                     +-------------------+
+                     | - Quick Starts    |
+                     | - Examples        |
+                     | - Tutorials       |
+                     | - Contributing    |
+                     | - Support         |
+                     +-------------------+
+```
