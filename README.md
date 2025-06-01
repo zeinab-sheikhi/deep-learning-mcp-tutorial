@@ -1,6 +1,6 @@
 Below is a diagram of the updated MCP Chatbot with multiple clients and servers:
 
-![]("images/updated_class.png")
+![MCP Chatbot]("images/updated_class.png")
 
   1. Instead of having one session, you now have a list of client sessions where each client session establishes a 1-to-1 connection to each server;
   2. `available_tools` includes the definitions of all the tools exposed by all servers that the chatbot can connect to.
