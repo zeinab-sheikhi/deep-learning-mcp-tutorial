@@ -3,10 +3,12 @@ import os
 from typing import List, Dict
 
 import nest_asyncio
-from dotenv import load_dotenv
 from anthropic import Anthropic
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
+
+
+nest_asyncio.apply()
 
 
 class MCP_Chatbot:
@@ -51,7 +53,7 @@ class MCP_Chatbot:
                     print(f"Calling tools {tool_name} with {tool_args}")
                     
                     # call tool
-                    result = self.session.call_tool(tool_name, tool_args)
+                    result = await self.session.call_tool(tool_name, tool_args)
                     messages.append({
                         "role": "user", 
                         "content": [
@@ -69,6 +71,7 @@ class MCP_Chatbot:
                         messages=messages,
                     )
                     if len(response.content) == 1 and response.content[0].type == "text":
+                        print(response.content[0].text)
                         process = False
 
     async def chat_loop(self):
@@ -145,13 +148,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    nest_asyncio.apply()
-    # Load environment variables from .env file with explicit path
-    load_dotenv(dotenv_path=".env", override=True)
-    # Print message to verify API key loading
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("WARNING: ANTHROPIC_API_KEY not found in environment variables")
-    else:
-        print("API key loaded successfully")
     asyncio.run(main())
